@@ -1,0 +1,36 @@
+package Pilas;
+
+public class Names_main {
+    public static void main(String[] args) {
+        String[] NamesEDD = new String[5];
+        NamesEDD[0] = "Ana";
+        NamesEDD[1] = "Juan";
+        NamesEDD[2] = "Pepito";
+        NamesEDD[3] = "Carla";
+        NamesEDD[4] = "Freddy";
+
+        Names nom1 = new Names("EDD", NamesEDD);
+
+    }
+
+    public static int determinarelnombrepepito (Names nom1) {
+
+        String [] Names = nom1.getNombres();
+        int c=0;
+
+        for (int i =0 ; i<Names.length ; i++) {
+            if (Names[] == "Pepito")
+            {
+                c=c+1;
+            }
+
+        }
+
+
+
+    }
+
+
+
+}
+
