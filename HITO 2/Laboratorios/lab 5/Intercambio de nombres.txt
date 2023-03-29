@@ -1,0 +1,87 @@
+package Pilas;
+
+public class Names_main {
+    public static void main(String[] args) {
+        String[] NamesEDD = new String[5];
+        NamesEDD[0] = "Ana";
+        NamesEDD[1] = "Juan";
+        NamesEDD[2] = "Pepito";
+        NamesEDD[3] = "Carla";
+        NamesEDD[4] = "Freddy";
+
+        Names nom1 = new Names("EDD", NamesEDD);
+         int c = cuenta_nombres (nom1, "pepito");
+         System.out.println(c);
+
+         nom1.remove_name ();
+         agregarnombre(nom1 , "william ");
+
+    }
+
+    public static void agregarnombre (Names nom1 , String agregarnombre){
+
+        String [] Names = nom1.getNombres() ;
+        String [] nuevosnombres = new String [Names.length + 1 ];
+
+        for (int i=0 ; i< Names.length; i++){
+            Names[i] = Names [i];
+        }
+        nuevosnombres [Names.length] = nuevosnombres;
+        nom1.setNombres(nuevosnombres);
+    }
+
+    public static int determinarelnombrepepito (Names nom1) {
+
+        String [] Names = nom1.getNombres();
+        int c=0;
+
+        for (int i =0 ; i<Names.length ; i++) {
+            if (Names[i] == "Freddy")
+            {
+                c=c+1;
+            }
+
+        }
+        System.out.println();
+        return c;
+
+
+
+    }
+    
+    public static int  cuenta_nombres (Names nom1 , String nombrebuscar)
+    {
+        String[] Names = nom1.getNombres ();
+        int i = 0;
+        int contador = 0;
+
+        for (i = 0; i < Names.length ; i++){
+            if (Names [i]== nombrebuscar) {
+                contador = contador + 1 ;
+            }
+        }
+        return contador;
+
+    }
+/*
+    public static void  remove_name (Names nom1 , String remove_names ){
+
+        String [] Names = nom1.getNombres() ;
+        String [] nuevosnombres = new String [Names.length + 1 ];
+        nuevosnombres [0]= remove_names ;
+
+        int i = 0 ;
+
+        for (i = 0; i < nuevosnombres.length ; i++){
+
+            nuevosnombres [i+1] = Names [i];
+
+        }
+        nom1.setNombres(nuevosnombres);
+
+    }
+
+ */
+
+
+}

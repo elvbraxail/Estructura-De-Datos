@@ -1,0 +1,33 @@
+import ejercisio.STUDIANTE;
+
+public class Main {
+    public static void main(String[] args)
+    {
+        STUDIANTE  nu = new STUDIANTE("pepito ", "pep", 25);
+                String nombre = nu.getfullname();
+                System.out.println("Nombre "+nombre);
+
+                nu.setFullname("pepito1");
+                String nuname = nu.getfullname();
+                System.out.println("nuevo nombre "+ nuname);
+
+                String apellido = nu.getlastname();
+                System.out.println("apellido "+apellido);
+
+                nu.setlastname("pep1");
+                String nulastname = nu.getlastname();
+                System.out.println("nuevo apellido "+ nulastname);
+
+                 int age = nu.getage();
+                 System.out.println("edad "+ age);
+
+                nu.setage(30);
+                int nuage = nu.getage();
+                System.out.println("nueva edad "+ nuage);
+
+
+                //set retorna un valor
+                //get cambia un valor
+
+    }
+}
