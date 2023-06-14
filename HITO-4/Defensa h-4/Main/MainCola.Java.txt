@@ -1,0 +1,130 @@
+package ColaClientes;
+
+public class Main {
+    public static void main (String[] args){
+
+        ColadeClientes cola = new ColadeClientes();
+
+
+        Cliente cliente1 = new Cliente("Carlos", "Mamani", 20, "Bolivia", "Masculino", "GOLD");
+        Cliente cliente2 = new Cliente("Rosa", "Alvarez", 19, "Argentina", "Femenino", "VIP");
+        Cliente cliente3 = new Cliente("Juan", "De la fuente ", 60, "Chile", "Masculino", "GOLD");
+        Cliente cliente4 = new Cliente("Rodrigo", "Espejo", 27, "Bolivia", "Masculino", "VIP");
+        Cliente cliente5 = new Cliente("Antonio", "De la cruz", 18, "Argentina", "Masculino", "GOLD");
+
+
+
+        cola.adicionarCliente(cliente1);
+        cola.adicionarCliente(cliente2);
+        cola.adicionarCliente(cliente3);
+        cola.adicionarCliente(cliente4);
+        cola.adicionarCliente(cliente5);
+
+
+
+        ColadeClientes cola2 = new ColadeClientes();
+
+        Cliente cliente6 = new Cliente("Carlos", "Mamani", 20, "Bolivia", "Masculino", "GOLD");
+        Cliente cliente7 = new Cliente("Rosa", "Alvarez", 19, "Argentina", "Femenino", "VIP");
+        Cliente cliente8 = new Cliente("Juan", "De la fuente ", 60, "Chile", "Masculino", "GOLD");
+        Cliente cliente9 = new Cliente("Rodrigo", "Espejo", 27, "Bolivia", "Masculino", "VIP");
+        Cliente cliente0 = new Cliente("Antonio", "De la cruz", 18, "Argentina", "Masculino", "GOLD");
+
+
+
+        cola2.adicionarCliente(cliente1);
+        cola2.adicionarCliente(cliente2);
+        cola2.adicionarCliente(cliente3);
+        cola2.adicionarCliente(cliente4);
+        cola2.adicionarCliente(cliente5);
+
+        //cola.mostrar();
+        //ConvertirdeTipo(cola, "GOLD", "Bolivia");
+        //System.out.println("--------------------------------------------");
+        //cola.mostrar();
+
+
+        //cola.mostrar();
+        //Edadmayor60(cola, 60);
+        //System.out.println("--------------------------------------------");
+        //cola.mostrar();
+
+
+        cola.mostrar();
+        NombreigualesentreColas(cola, "Juan", cola2);
+        System.out.println("--------------------------------------------");
+        cola.mostrar();
+
+    }
+
+    public static void NombreigualesentreColas(ColadeClientes cola, String nombre, ColadeClientes cola2){
+
+        ColadeClientes aux = new ColadeClientes();
+        ColadeClientes aux1 = new ColadeClientes();
+        Cliente itemeliminado = null;
+
+        while(!cola.esVacia()) {
+
+            itemeliminado = cola.eliminar();
+
+            if (itemeliminado.getNombre().equals(nombre)) {
+                aux1.adicionarCliente(itemeliminado);
+            }
+            else{
+                aux.adicionarCliente(itemeliminado);
+
+            }
+        }
+        cola.vaciar(aux);
+        aux.vaciar(cola2);
+        cola2.vaciar(aux1);
+        cola2.vaciar(aux);
+
+    }
+
+    public static void ConvertirdeTipo(ColadeClientes cola, String tipoCLiente, String nacionalidad){
+
+        ColadeClientes aux = new ColadeClientes();
+        Cliente itemeliminado = null;
+        while(!cola.esVacia()){
+
+            itemeliminado = cola.eliminar();
+
+            if(itemeliminado.getTipo().equals(tipoCLiente) && itemeliminado.getPais().equals(nacionalidad)){
+                itemeliminado.setTipo("VIP");
+            }
+
+            aux.adicionarCliente(itemeliminado);
+        }
+
+        cola.vaciar(aux);
+    }
+
+
+
+
+
+    public static void Edadmayor60(ColadeClientes cola,int edad){
+
+        ColadeClientes aux = new ColadeClientes();
+        ColadeClientes aux1 = new ColadeClientes();
+        Cliente itemeliminado = null;
+
+        while(!cola.esVacia()) {
+
+            itemeliminado = cola.eliminar();
+
+            if (itemeliminado.getEdad() == edad) {
+                aux1.adicionarCliente(itemeliminado);
+            }
+            else{
+
+                aux.adicionarCliente(itemeliminado);
+
+            }
+        }
+        cola.vaciar(aux1);
+        cola.vaciar(aux);
+    }
+    
+}

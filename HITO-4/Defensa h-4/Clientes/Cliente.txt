@@ -1,0 +1,83 @@
+package ColaClientes;
+
+public class Cliente {
+
+    private String Nombre;
+    private String Apellido;
+    private int Edad ;
+    private String Pais;
+    private String Genero ;
+    private String Tipo;
+
+    public Cliente(String nombre, String apellido, int edad, String pais, String genero, String tipo) {
+        Nombre = nombre;
+        Apellido = apellido;
+        Edad = edad;
+        Pais = pais;
+        Genero = genero;
+        Tipo = tipo;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String nombre) {
+        Nombre = nombre;
+    }
+
+    public String getApellido() {
+        return Apellido;
+    }
+
+    public void setApellido(String apellido) {
+        Apellido = apellido;
+    }
+
+    public int getEdad() {
+        return Edad;
+    }
+
+    public void setEdad(int edad) {
+        Edad = edad;
+    }
+
+    public String getPais() {
+        return Pais;
+    }
+
+    public void setPais(String pais) {
+        Pais = pais;
+    }
+
+    public String getGenero() {
+        return Genero;
+    }
+
+    public void setGenero(String genero) {
+        Genero = genero;
+    }
+
+    public String getTipo() {
+        return Tipo;
+    }
+
+    public void setTipo(String tipo) {
+        Tipo = tipo;
+    }
+
+    public void mostrar (){
+
+        System.out.println("Mostrando datos del los clientes");
+        System.out.println("Nombre:" + getNombre());
+        System.out.println("Apellido:"  + getApellido());
+        System.out.println("Edad:"  + getEdad());
+        System.out.println("Pais:"  + getPais());
+        System.out.println("Genero:"  + getGenero());
+        System.out.println("Tipo:"  + getTipo());
+        System.out.println();
+
+
+
+    }
+}

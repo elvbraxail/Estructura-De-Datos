@@ -1,0 +1,112 @@
+package ColaClientes;
+
+
+
+public class ColadeClientes {
+
+
+    private int max;
+    private int ini;
+
+    private int fin;
+    private Cliente[] clientes;
+
+    public ColadeClientes() {
+
+        this.max = 100;
+        this.ini = 0;
+        this.fin= 0;
+        this.clientes = new Cliente[this.max+1] ;
+    }
+    public boolean esVacia (){
+
+        if (ini ==0 && fin ==0){
+            return true ;
+        }else
+        {
+            return false;
+
+        }
+    }
+
+    public boolean esLLena (){
+        if (fin == max ){
+            return true ;
+        }else {
+            return false;
+
+        }
+    }
+
+    public void adicionarCliente (Cliente nuevocliente) {
+
+        if (esLLena() ){
+            System.out.println("Cola llena");
+
+        }else {
+            fin = fin +1;
+
+            clientes [fin] = nuevocliente;
+
+        }
+
+    }
+    public Cliente eliminar() {
+
+        Cliente elemento = null;
+
+        if (esVacia())
+        {
+            System.out.println("La cola esta vacia");
+        } else {
+            ini = ini+1;
+
+            elemento = clientes [ini];
+
+            if (ini == fin ){
+                ini = 0;
+                fin = 0;
+
+            }
+
+
+        }
+
+        return elemento ;
+    }
+    public void vaciar (ColadeClientes clientes ) {
+
+        while (!clientes.esVacia()) {
+
+            adicionarCliente (clientes.eliminar());
+        }
+
+
+    }
+    public void mostrar () {
+
+        if (esVacia()) {
+            System.out.println("No hay numeros que mostrar ");
+        }
+        else
+        {
+            Cliente elemeliminado ;
+            System.out.println("Muestra de numeros :");
+
+            ColadeClientes aux = new ColadeClientes();
+            while (!esVacia()) {
+                elemeliminado= eliminar();
+                elemeliminado.mostrar ();
+                aux.adicionarCliente(elemeliminado);
+
+
+            }
+            vaciar(aux);
+        }
+    }
+    public int Numerodeelementos (){
+
+        return fin - ini;
+    }
+
+}
